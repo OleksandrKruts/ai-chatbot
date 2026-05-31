@@ -2,6 +2,8 @@
 
 A modern AI chat application built with **Next.js 15** and **Groq API**, featuring real-time streaming responses.
 
+🔗 **Live Demo:** [AI Chatbot](https://ai-chatbot-theta-lilac-46.vercel.app/chat)
+
 ---
 
 ## Overview
