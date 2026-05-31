@@ -81,9 +81,7 @@ export function useChat(systemPrompt?: string) {
                   return next;
                 });
               }
-            } catch {
-              // ignore malformed chunks
-            }
+            } catch {}
           }
         }
       } catch (err) {
@@ -93,7 +91,7 @@ export function useChat(systemPrompt?: string) {
         setIsLoading(false);
       }
     },
-    [messages, isLoading, systemPrompt]
+    [messages, isLoading, systemPrompt],
   );
 
   const reset = useCallback(() => {

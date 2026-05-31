@@ -20,14 +20,12 @@ export default function ChatPage() {
     useChat(SYSTEM_PROMPT);
   const bottomRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom on new messages
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   return (
     <div className="flex flex-col h-screen max-w-3xl mx-auto">
-      {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700 shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center">
@@ -45,7 +43,7 @@ export default function ChatPage() {
             <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
               AI Chatbot
             </h1>
-            <p className="text-xs text-gray-500">powered by Claude</p>
+            <p className="text-xs text-gray-500">powered by Grok</p>
           </div>
         </div>
         <button
@@ -56,7 +54,6 @@ export default function ChatPage() {
         </button>
       </header>
 
-      {/* Messages */}
       <main className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full gap-6 text-center">
@@ -93,7 +90,6 @@ export default function ChatPage() {
         <div ref={bottomRef} />
       </main>
 
-      {/* Input */}
       <div className="shrink-0">
         <ChatInput
           onSend={sendMessage}
@@ -101,7 +97,7 @@ export default function ChatPage() {
           placeholder="Ask anything... (Enter to send, Shift+Enter for new line)"
         />
         <p className="text-center text-xs text-gray-400 pb-2">
-          Claude can make mistakes. Verify important information.
+          Grok can make mistakes. Verify important information.
         </p>
       </div>
     </div>

@@ -11,16 +11,16 @@ export function ChatMessage({ message }: Props) {
     <div
       className={`flex gap-3 ${isUser ? "flex-row-reverse" : "flex-row"} items-start`}
     >
-      {/* Avatar */}
       <div
         className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium shrink-0 ${
-          isUser ? "bg-emerald-100 text-emerald-800" : "bg-violet-100 text-violet-800"
+          isUser
+            ? "bg-emerald-100 text-emerald-800"
+            : "bg-violet-100 text-violet-800"
         }`}
       >
         {isUser ? "You" : "AI"}
       </div>
 
-      {/* Bubble */}
       <div
         className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
           isUser

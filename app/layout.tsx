@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AI Chatbot",
-  description: "AI chatbot powered by Claude (Anthropic)",
+  description: "AI chatbot powered by Grok",
 };
 
 export default function RootLayout({

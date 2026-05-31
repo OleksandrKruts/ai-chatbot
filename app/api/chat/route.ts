@@ -45,7 +45,6 @@ export async function POST(req: NextRequest) {
       return new Response(err, { status: response.status });
     }
 
-    // Groq отдаёт OpenAI-совместимый SSE — конвертируем в наш формат
     const readable = new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder();
@@ -78,9 +77,7 @@ export async function POST(req: NextRequest) {
                   });
                   controller.enqueue(encoder.encode(`data: ${data}\n\n`));
                 }
-              } catch {
-                // ignore malformed chunks
-              }
+              } catch {}
             }
           }
         } catch (err) {
